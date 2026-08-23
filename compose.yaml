@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: redis:7
+    container_name: solstice-redis
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:16
+    container_name: solstice-postgres
+    environment:
+      POSTGRES_USER: solstice
+      POSTGRES_PASSWORD: solstice
+      POSTGRES_DB: solstice
+    ports:
+      - "5432:5432"
